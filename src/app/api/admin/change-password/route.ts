@@ -78,5 +78,7 @@ export async function POST(request: Request) {
       { error: "Failed to change password" },
       { status: 500 }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }

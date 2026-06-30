@@ -13,7 +13,8 @@
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "import:bibtex": "tsx scripts/import-bibtex.ts",
-    "import:csv": "tsx scripts/import-csv.ts"
+    "import:csv": "tsx scripts/import-csv.ts",
+    "import:professor": "tsx scripts/import-professor-data.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

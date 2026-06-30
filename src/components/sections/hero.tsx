@@ -3,6 +3,8 @@ import {
   ExternalLink,
   Mail,
   X as XIcon,
+  Youtube,
+  Github,
 } from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
@@ -95,6 +97,30 @@ export async function Hero() {
           {/* Secondary social/profile links */}
           <FadeIn direction="up" delay={320} duration={550}>
             <div className="flex flex-wrap items-center gap-4 pt-1">
+              {siteConfig.youtubeUrl && (
+                <a
+                  href={siteConfig.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube channel"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Youtube className="size-3.5" />
+                  YouTube
+                </a>
+              )}
+              {siteConfig.githubUrl && (
+                <a
+                  href={siteConfig.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Github className="size-3.5" />
+                  GitHub
+                </a>
+              )}
               {siteConfig.linkedinUrl && (
                 <a
                   href={siteConfig.linkedinUrl}

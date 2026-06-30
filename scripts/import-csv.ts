@@ -39,7 +39,7 @@ function parseCSV(csvContent: string): any[] {
       if (entry.title) {
         entries.push(entry);
       }
-    } catch (error) {
+    } catch {
       console.warn(`⚠️  Skipping malformed line ${i + 1}`);
     }
   }

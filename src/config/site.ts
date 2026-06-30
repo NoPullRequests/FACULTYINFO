@@ -26,6 +26,8 @@ export const siteConfig = {
   // Social profiles
   linkedinUrl: "https://www.linkedin.com/in/prasenjit-dey-02499520/",
   twitterUrl: "https://twitter.com/PrasenjitDey30",
+  youtubeUrl: "https://www.youtube.com/@dr.prasenjitdey2636",
+  githubUrl: "https://github.com/Prasenjit123",
   navLinks: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
