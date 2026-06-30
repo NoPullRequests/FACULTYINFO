@@ -1,9 +1,8 @@
 import {
   BookOpen,
   ExternalLink,
-  Linkedin,
   Mail,
-  Twitter,
+  X as XIcon,
 } from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
@@ -104,7 +103,7 @@ export async function Hero() {
                   aria-label="LinkedIn profile"
                   className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <Linkedin className="size-3.5" />
+                  <ExternalLink className="size-3.5" />
                   LinkedIn
                 </a>
               )}
@@ -116,7 +115,7 @@ export async function Hero() {
                   aria-label="Twitter / X profile"
                   className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <Twitter className="size-3.5" />
+                  <XIcon className="size-3.5" />
                   Twitter
                 </a>
               )}
