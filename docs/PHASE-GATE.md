@@ -118,7 +118,61 @@ npm run db:seed
 
 Without `DATABASE_URL`, the site continues using `src/content/*.json` automatically.
 
-**Gate result: PASS → Proceed to Phase 5 (Admin Dashboard) when ready**
+**Gate result: PASS**
+
+---
+
+## Phase 6 — Polish, Content Pages & Deploy ✅ COMPLETE
+
+**Date verified:** 2026-06-30
+
+### What was added
+
+| Feature | Status |
+|---------|--------|
+| Scroll-triggered animations (FadeIn component) | ✅ |
+| Hero with staggered entrance, social links, gradient avatar | ✅ |
+| Statistics cards — clickable, route to pages | ✅ |
+| Publication cards — hover lift, type-colored badges | ✅ |
+| Student detail pages (`/students/[id]`) | ✅ |
+| Contact page (form, office info, academic profiles) | ✅ |
+| Careers page (Ph.D. positions, project roles, apply CTA) | ✅ |
+| FAQs page (accordion, 8 Q&A items) | ✅ |
+| Downloads page (CV placeholder, external resources) | ✅ |
+| Blog page (placeholder structure, 3 sample posts) | ✅ |
+| Gallery page (4 category grid, placeholder) | ✅ |
+
+### Automated checks
+
+| Check | Command | Expected | Status |
+|-------|---------|----------|--------|
+| Production build | `npm run build` | Exit 0, all 12 routes + 8 student pages | ✅ |
+| Lint | `npm run lint` | Exit 0 | ✅ |
+
+### Manual checks
+
+| Check | Status |
+|-------|--------|
+| All stats cards link correctly (Pubs → `/publications`, Citations → Scholar, etc.) | ✅ |
+| Student cards link to detail pages (`/students/stu-1` through `stu-8`) | ✅ |
+| Scroll animations trigger on all pages | ✅ |
+| Hero social links (LinkedIn, X, ORCID, Scopus, NIT) render and work | ✅ |
+| Contact form fields styled, layout responsive | ✅ |
+| Accordion works (FAQs expand/collapse smoothly) | ✅ |
+| Publication cards show color-coded type badges | ✅ |
+
+### Content ready for professor
+
+| Item | Page | Ready? |
+|------|------|--------|
+| CV PDF | `/downloads` | No — upload to `/public/cv.pdf` and update href |
+| Office hours | `/contact` | Placeholder (Mon–Fri 10–5) — update if different |
+| Student detail content | `/students/[id]` | Schema ready — add bio, thesis, links per student |
+| Blog posts | `/blog` | Structure ready — add real posts when available |
+| Gallery images | `/gallery` | Structure ready — add photos to `/public/gallery/` |
+| Teaching materials | `/downloads` | Placeholder — link syllabi/slides when ready |
+
+**Gate result: PASS → Ready for Phase 7 (Deploy to Vercel)**
 
 ---
 

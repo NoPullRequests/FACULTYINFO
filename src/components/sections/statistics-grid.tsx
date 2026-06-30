@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import { cn } from "@/lib/utils";
@@ -84,7 +86,7 @@ export function AnimatedCounter(props: AnimatedCounterProps) {
   return <AnimatedCounterInner {...props} />;
 }
 
-// ─── Staggered fade-in for stat cards ────────────────────────────────────────
+// ─── Staggered fade-in ────────────────────────────────────────────────────────
 
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
@@ -94,7 +96,12 @@ function useInView(threshold = 0.2) {
     const node = ref.current;
     if (!node) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry?.isIntersecting) { setInView(true); observer.disconnect(); } },
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
       { threshold },
     );
     observer.observe(node);
@@ -104,44 +111,103 @@ function useInView(threshold = 0.2) {
   return { ref, inView };
 }
 
-// ─── StatItem ─────────────────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type StatItem = {
   label: string;
   value: number;
   suffix?: string;
+  /** Internal path or external URL to navigate to on click */
+  href?: string;
+  /** If true, opens in a new tab */
+  external?: boolean;
 };
+
+// ─── Stat card ────────────────────────────────────────────────────────────────
 
 function StatCard({ item, index }: { item: StatItem; index: number }) {
   const { ref, inView } = useInView(0.15);
   const reduced = usePrefersReducedMotion();
   const visible = inView || reduced;
 
-  return (
-    <div
-      ref={ref}
-      className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-center transition-shadow hover:shadow-md md:text-left"
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "none" : "translateY(20px)",
-        transition: visible
-          ? `opacity 500ms ease ${index * 90}ms, transform 500ms ease ${index * 90}ms`
-          : "none",
-      }}
-    >
+  const inner = (
+    <>
       {/* Accent top bar */}
       <span
         aria-hidden
-        className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary/60 via-primary to-primary/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className={cn(
+          "absolute inset-x-0 top-0 h-0.5 rounded-t-xl bg-gradient-to-r from-primary/60 via-primary to-primary/60 transition-opacity duration-300",
+          item.href ? "opacity-0 group-hover:opacity-100" : "opacity-0",
+        )}
       />
+
+      {/* External link indicator */}
+      {item.href && item.external && (
+        <ArrowUpRight
+          className="absolute right-3 top-3 size-3.5 text-muted-foreground/40 transition-all duration-200 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          aria-hidden
+        />
+      )}
+
       <p className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         <AnimatedCounter value={item.value} duration={1200} />
         {item.suffix && (
           <span className="ml-0.5 text-xl text-primary">{item.suffix}</span>
         )}
       </p>
-      <p className="mt-1.5 text-sm font-medium text-muted-foreground">{item.label}</p>
-    </div>
+      <p className="mt-1.5 text-sm font-medium text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
+        {item.label}
+      </p>
+    </>
+  );
+
+  const sharedClass = cn(
+    "group relative overflow-hidden rounded-xl border border-border bg-card p-6 text-center transition-all duration-200 md:text-left",
+    item.href && "cursor-pointer hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md",
+  );
+
+  const sharedStyle = {
+    opacity: visible ? 1 : 0,
+    transform: visible ? "none" : "translateY(20px)",
+    transition: visible
+      ? `opacity 500ms ease ${index * 90}ms, transform 500ms ease ${index * 90}ms`
+      : "none",
+  };
+
+  if (!item.href) {
+    return (
+      <div ref={ref} className={sharedClass} style={sharedStyle}>
+        {inner}
+      </div>
+    );
+  }
+
+  if (item.external) {
+    return (
+      <a
+        ref={ref as React.Ref<HTMLAnchorElement>}
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${item.label}: ${item.value}${item.suffix ?? ""} — opens Google Scholar`}
+        className={sharedClass}
+        style={sharedStyle}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      ref={ref as React.Ref<HTMLAnchorElement>}
+      href={item.href}
+      aria-label={`${item.label}: ${item.value}${item.suffix ?? ""}`}
+      className={sharedClass}
+      style={sharedStyle}
+    >
+      {inner}
+    </Link>
   );
 }
 

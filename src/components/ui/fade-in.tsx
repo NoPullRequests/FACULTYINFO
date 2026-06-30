@@ -51,14 +51,11 @@ export function FadeIn({
   once = true,
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
   const reduced = usePrefersReducedMotion();
+  const [visible, setVisible] = useState(reduced);
 
   useEffect(() => {
-    if (reduced) {
-      setVisible(true);
-      return;
-    }
+    if (reduced) return;
 
     const node = ref.current;
     if (!node) return;
