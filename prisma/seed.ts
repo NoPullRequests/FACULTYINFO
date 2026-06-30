@@ -12,47 +12,29 @@ const prisma = new PrismaClient();
 async function main() {
   console.log("Seeding database from src/content/*.json ...");
 
-  // Create default admin users
-  console.log("Creating admin users...");
+  // Create single admin account for the professor
+  console.log("Creating admin account...");
   
-  const superAdminPassword = await bcrypt.hash("admin123", 10);
-  const professorPassword = await bcrypt.hash("professor123", 10);
+  const adminPassword = await bcrypt.hash("changeme123", 10);
 
   await prisma.user.upsert({
     where: { email: "admin@example.com" },
     create: {
       email: "admin@example.com",
-      name: "Super Admin",
-      password: superAdminPassword,
-      role: "SUPER_ADMIN",
+      name: "Administrator",
+      password: adminPassword,
       isActive: true,
     },
     update: {
-      password: superAdminPassword,
-      role: "SUPER_ADMIN",
+      password: adminPassword,
       isActive: true,
     },
   });
 
-  await prisma.user.upsert({
-    where: { email: "professor@example.com" },
-    create: {
-      email: "professor@example.com",
-      name: "Professor Demo",
-      password: professorPassword,
-      role: "PROFESSOR",
-      isActive: true,
-    },
-    update: {
-      password: professorPassword,
-      role: "PROFESSOR",
-      isActive: true,
-    },
-  });
-
-  console.log("✓ Admin users created");
-  console.log("  - Super Admin: admin@example.com / admin123");
-  console.log("  - Professor: professor@example.com / professor123");
+  console.log("✓ Admin account created");
+  console.log("  - Login: admin@example.com");
+  console.log("  - Password: changeme123");
+  console.log("  - IMPORTANT: Change this password immediately after first login!");
 
   await prisma.siteSettings.upsert({
     where: { id: "default" },

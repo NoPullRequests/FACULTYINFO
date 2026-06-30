@@ -12,7 +12,7 @@ const authSecret =
     : undefined);
 
 /**
- * Admin authentication with database users and password hashing
+ * Simple admin authentication for professor
  */
 export const { handlers, signIn, signOut, auth } = NextAuth({
   secret: authSecret,
@@ -59,7 +59,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             id: user.id,
             name: user.name,
             email: user.email,
-            role: user.role,
           };
         } catch (error) {
           console.error("Auth error:", error);
@@ -76,14 +75,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        token.role = user.role;
       }
       return token;
     },
     session({ session, token }) {
       if (session.user) {
-        session.user.id = token.id as string;
-        session.user.role = token.role as string;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (session.user as any).id = token.id as string;
       }
       return session;
     },

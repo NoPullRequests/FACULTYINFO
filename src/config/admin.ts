@@ -4,6 +4,5 @@ export const adminNavLinks = [
   { label: "Students", href: "/admin/students" },
   { label: "Projects", href: "/admin/projects" },
   { label: "Courses", href: "/admin/courses" },
-  { label: "Users", href: "/admin/users" },
   { label: "Settings", href: "/admin/settings" },
 ] as const;

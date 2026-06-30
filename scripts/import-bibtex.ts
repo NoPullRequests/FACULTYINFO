@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { PrismaClient } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -113,7 +114,7 @@ async function importBibTeX(filePath: string) {
         }
         
         // Create publication
-        const publication = await prisma.publication.create({
+        await prisma.publication.create({
           data: {
             id: entry.key || `pub-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             title: entry.title,

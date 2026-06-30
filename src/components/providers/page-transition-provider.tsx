@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 type PageTransitionProviderProps = {
   children: React.ReactNode;
@@ -14,16 +13,11 @@ type PageTransitionProviderProps = {
  */
 export function PageTransitionProvider({ children }: PageTransitionProviderProps) {
   const pathname = usePathname();
-  const [displayPath, setDisplayPath] = useState(pathname);
-
-  useEffect(() => {
-    setDisplayPath(pathname);
-  }, [pathname]);
 
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.div
-        key={displayPath}
+        key={pathname}
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}

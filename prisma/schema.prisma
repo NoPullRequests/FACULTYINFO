@@ -134,18 +134,16 @@ model GalleryImage {
   @@index([album])
 }
 
-// Admin user management
+// Admin user - single professor account
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
   name      String
-  password  String   // Hashed password
-  role      String   @default("PROFESSOR") // SUPER_ADMIN or PROFESSOR
+  password  String   // Hashed password with bcrypt
   isActive  Boolean  @default(true)
   lastLogin DateTime?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([email])
-  @@index([role])
 }
