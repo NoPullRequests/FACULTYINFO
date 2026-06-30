@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Calendar } from "lucide-react";
 
 import { PublicationCard } from "@/components/cards/publication-card";
 import { SectionHeader } from "@/components/layout/section-header";
@@ -6,15 +7,52 @@ import { Hero } from "@/components/sections/hero";
 import { Statistics } from "@/components/sections/statistics";
 import { FadeIn } from "@/components/ui/fade-in";
 import { getFeaturedPublications, getSiteContent } from "@/lib/content";
+import newsData from "@/content/news.json";
 
 export default async function HomePage() {
   const { researchInterests } = await getSiteContent();
   const featured = await getFeaturedPublications();
+  const latestNews = (newsData.news as Array<{ id: string; title: string; date: string; category: string }>)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <>
       <Hero />
       <Statistics />
+
+      {/* Latest News */}
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <FadeIn>
+          <SectionHeader
+            title="Latest News"
+            description="Recent updates and announcements."
+            href="/news"
+            linkLabel="View all news"
+          />
+        </FadeIn>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {latestNews.map((item, i) => (
+            <FadeIn key={item.id} delay={60 + i * 60} direction="up">
+              <Link
+                href="/news"
+                className="group block rounded-xl border border-border bg-card p-5 transition-all duration-200 hover:border-primary/30 hover:shadow-md"
+              >
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <Calendar className="size-3" />
+                  {new Date(item.date).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                </div>
+                <h3 className="mt-3 font-semibold leading-snug transition-colors group-hover:text-primary">
+                  {item.title}
+                </h3>
+                <span className="mt-2 inline-block rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                  {item.category}
+                </span>
+              </Link>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
 
       {/* Research Interests */}
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

@@ -1,4 +1,7 @@
-import { ExternalLink, FileText } from "lucide-react";
+"use client";
+
+import { ExternalLink, FileText, Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import type { Publication } from "@/lib/content";
@@ -32,13 +35,34 @@ const typeConfig: Record<
   },
 };
 
+function generateBibTeX(pub: Publication): string {
+  const id = pub.id;
+  const type = pub.type === "JOURNAL" ? "article" : pub.type === "CONFERENCE" ? "inproceedings" : "incollection";
+  
+  return `@${type}{${id},
+  title={${pub.title}},
+  author={${pub.authors}},
+  ${pub.type === "JOURNAL" ? "journal" : "booktitle"}={${pub.venue}},
+  year={${pub.year}}${pub.doi ? `,\n  doi={${pub.doi}}` : ""}
+}`;
+}
+
 /**
- * Single publication card with type badge, venue, and DOI link.
+ * Single publication card with type badge, venue, DOI link, and BibTeX.
  * Hover: subtle lift + border highlight.
  */
 export function PublicationCard({ publication, className }: PublicationCardProps) {
+  const [showBibTeX, setShowBibTeX] = useState(false);
+  const [copied, setCopied] = useState(false);
   const doiUrl = getDoiUrl(publication.doi);
   const type = typeConfig[publication.type] ?? typeConfig.JOURNAL;
+  const bibtex = generateBibTeX(publication);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(bibtex);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <article
@@ -88,8 +112,8 @@ export function PublicationCard({ publication, className }: PublicationCardProps
       <p className="mt-1.5 text-sm text-muted-foreground">{publication.authors}</p>
       <p className="mt-1 text-sm italic text-muted-foreground/80">{publication.venue}</p>
 
-      {doiUrl && (
-        <div className="mt-3">
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        {doiUrl && (
           <ButtonLink
             href={doiUrl}
             target="_blank"
@@ -101,6 +125,31 @@ export function PublicationCard({ publication, className }: PublicationCardProps
             <ExternalLink className="size-3.5" />
             View DOI
           </ButtonLink>
+        )}
+        <button
+          onClick={() => setShowBibTeX(!showBibTeX)}
+          className="flex items-center gap-1 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
+        >
+          <FileText className="size-3.5" />
+          {showBibTeX ? "Hide" : "Show"} BibTeX
+        </button>
+      </div>
+
+      {showBibTeX && (
+        <div className="mt-4 rounded-lg border border-border bg-muted/30 p-3">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-semibold text-muted-foreground">BibTeX</span>
+            <button
+              onClick={handleCopy}
+              className="flex items-center gap-1 rounded px-2 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
+            >
+              {copied ? <Check className="size-3" /> : <Copy className="size-3" />}
+              {copied ? "Copied!" : "Copy"}
+            </button>
+          </div>
+          <pre className="overflow-x-auto text-xs text-foreground/80">
+            <code>{bibtex}</code>
+          </pre>
         </div>
       )}
     </article>
