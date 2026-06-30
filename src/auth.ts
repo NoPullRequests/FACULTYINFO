@@ -1,5 +1,9 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
+
+const prisma = new PrismaClient();
 
 const authSecret =
   process.env.AUTH_SECRET ??
@@ -7,32 +11,8 @@ const authSecret =
     ? "academic-portfolio-dev-secret-do-not-use-in-production"
     : undefined);
 
-// #region agent log
-fetch("http://127.0.0.1:7635/ingest/fe280080-e33e-430c-bc31-ba262f5580c9", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "X-Debug-Session-Id": "8cccf9",
-  },
-  body: JSON.stringify({
-    sessionId: "8cccf9",
-    location: "auth.ts:init",
-    message: "Auth secret resolved",
-    data: {
-      hasSecret: Boolean(authSecret),
-      fromEnv: Boolean(process.env.AUTH_SECRET),
-      nodeEnv: process.env.NODE_ENV,
-    },
-    timestamp: Date.now(),
-    hypothesisId: "B",
-    runId: "post-fix",
-  }),
-}).catch(() => {});
-// #endregion
-
 /**
- * Admin authentication — single credentials user via environment variables.
- * Set ADMIN_EMAIL, ADMIN_PASSWORD, and AUTH_SECRET in .env.local
+ * Admin authentication with database users and password hashing
  */
 export const { handlers, signIn, signOut, auth } = NextAuth({
   secret: authSecret,
@@ -44,26 +24,47 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-      authorize(credentials) {
+      async authorize(credentials) {
         const email = credentials?.email as string | undefined;
         const password = credentials?.password as string | undefined;
-        const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPassword = process.env.ADMIN_PASSWORD;
 
-        if (!adminEmail || !adminPassword) {
+        if (!email || !password) {
           return null;
         }
 
-        if (email === adminEmail && password === adminPassword) {
-          return {
-            id: "admin",
-            name: "Administrator",
-            email: adminEmail,
-            role: "ADMIN",
-          };
-        }
+        try {
+          // Find user in database
+          const user = await prisma.user.findUnique({
+            where: { email },
+          });
 
-        return null;
+          if (!user || !user.isActive) {
+            return null;
+          }
+
+          // Verify password
+          const passwordMatch = await bcrypt.compare(password, user.password);
+
+          if (!passwordMatch) {
+            return null;
+          }
+
+          // Update last login
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { lastLogin: new Date() },
+          });
+
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            role: user.role,
+          };
+        } catch (error) {
+          console.error("Auth error:", error);
+          return null;
+        }
       },
     }),
   ],
@@ -74,12 +75,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     jwt({ token, user }) {
       if (user) {
-        token.role = "ADMIN";
+        token.id = user.id;
+        token.role = user.role;
       }
       return token;
     },
     session({ session, token }) {
       if (session.user) {
+        session.user.id = token.id as string;
         session.user.role = token.role as string;
       }
       return session;

@@ -35,6 +35,7 @@ model Publication {
   pdfUrl    String?
   bibtex    String?  @db.Text
   abstract  String?  @db.Text
+  tags      Json     @default("[]")
   featured  Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -133,12 +134,18 @@ model GalleryImage {
   @@index([album])
 }
 
-// Reserved for Phase 5 admin authentication
+// Admin user management
 model User {
   id        String   @id @default(uuid())
   email     String   @unique
   name      String
-  role      String   @default("ADMIN")
+  password  String   // Hashed password
+  role      String   @default("PROFESSOR") // SUPER_ADMIN or PROFESSOR
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([role])
 }

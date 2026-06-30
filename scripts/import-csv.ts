@@ -172,6 +172,7 @@ async function importCSV(filePath: string) {
         // Create publication
         await prisma.publication.create({
           data: {
+            id: `pub-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             title: entry.title,
             authors: entry.authors || 'Unknown',
             year: parseInt(entry.year),

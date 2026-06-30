@@ -115,6 +115,7 @@ async function importBibTeX(filePath: string) {
         // Create publication
         const publication = await prisma.publication.create({
           data: {
+            id: entry.key || `pub-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
             title: entry.title,
             authors: entry.author || 'Unknown',
             year: parseInt(entry.year || new Date().getFullYear().toString()),
