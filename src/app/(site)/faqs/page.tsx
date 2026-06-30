@@ -82,7 +82,7 @@ export default function FaqsPage() {
       <FadeIn delay={180} direction="up">
         <div className="mt-12 rounded-xl border border-border bg-muted/30 p-8 text-center">
           <p className="text-sm text-muted-foreground">
-            Can't find what you're looking for?
+            Can&apos;t find what you&apos;re looking for?
           </p>
           <ButtonLink href="/contact" className="mt-4">
             Contact Me
