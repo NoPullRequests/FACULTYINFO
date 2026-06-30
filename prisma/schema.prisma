@@ -84,6 +84,55 @@ model Course {
   updatedAt DateTime @updatedAt
 }
 
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  excerpt     String   @db.Text
+  content     String?  @db.Text
+  date        DateTime @default(now())
+  category    String   @default("General")
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date(sort: Desc)])
+  @@index([featured])
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  category    String   @default("Research")
+  tags        Json     @default("[]")
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([publishedAt(sort: Desc)])
+}
+
+model GalleryImage {
+  id          String   @id @default(cuid())
+  title       String
+  description String?  @db.Text
+  imageUrl    String
+  category    String
+  album       String?
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([album])
+}
+
 // Reserved for Phase 5 admin authentication
 model User {
   id        String   @id @default(uuid())
