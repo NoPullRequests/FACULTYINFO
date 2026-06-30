@@ -69,7 +69,7 @@ export function FadeIn({
           setVisible(false);
         }
       },
-      { threshold, rootMargin: "0px 0px -32px 0px" },
+      { threshold },
     );
 
     observer.observe(node);

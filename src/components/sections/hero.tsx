@@ -3,9 +3,9 @@ import {
   ExternalLink,
   Mail,
   X as XIcon,
-  Youtube,
-  Github,
+  Download,
 } from "lucide-react";
+import Image from "next/image";
 
 import { FadeIn } from "@/components/ui/fade-in";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -37,8 +37,15 @@ export async function Hero() {
         {/* Avatar */}
         <FadeIn direction="right" duration={600} threshold={0.1}>
           <div className="relative shrink-0">
-            <div className="flex size-36 items-center justify-center rounded-2xl border border-border bg-gradient-to-br from-primary/20 via-primary/10 to-muted text-4xl font-bold text-primary shadow-sm sm:size-44">
-              {initials}
+            <div className="size-36 overflow-hidden rounded-2xl border border-border shadow-sm sm:size-44">
+              <Image
+                src="/images/professor.jpg"
+                alt="Dr. Prasenjit Dey"
+                width={176}
+                height={176}
+                className="h-full w-full object-cover"
+                priority
+              />
             </div>
             {/* Online / verified dot */}
             <span
@@ -73,54 +80,58 @@ export async function Hero() {
           {/* Primary CTAs */}
           <FadeIn direction="up" delay={240} duration={550}>
             <div className="flex flex-wrap gap-3">
-              <ButtonLink
+              {/* Download CV - Red Outline */}
+              <a
+                href="/cv/Prasenjit_Dey_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-red-600 px-4 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-600/10"
+              >
+                <Download className="size-4" />
+                Download CV
+              </a>
+              
+              {/* Google Scholar - Google Blue */}
+              <a
                 href={siteConfig.scholarUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-[#4285f4] px-4 py-2 text-sm font-medium text-[#4285f4] transition-colors hover:bg-[#4285f4]/10"
               >
                 <BookOpen className="size-4" />
                 Google Scholar
-              </ButtonLink>
-              <ButtonLink href="/publications" variant="outline">
+              </a>
+              
+              {/* Publications - Emerald Green */}
+              <a
+                href="/publications"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-emerald-600 px-4 py-2 text-sm font-medium text-emerald-600 transition-colors hover:bg-emerald-600/10"
+              >
                 Publications
-              </ButtonLink>
-              <ButtonLink href="/research" variant="outline">
+              </a>
+              
+              {/* Research - Purple */}
+              <a
+                href="/research"
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-purple-600 px-4 py-2 text-sm font-medium text-purple-600 transition-colors hover:bg-purple-600/10"
+              >
                 Research
-              </ButtonLink>
-              <ButtonLink href={`mailto:${siteConfig.email}`} variant="outline">
+              </a>
+              
+              {/* Email - Orange */}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="inline-flex items-center gap-2 rounded-lg border-2 border-orange-600 px-4 py-2 text-sm font-medium text-orange-600 transition-colors hover:bg-orange-600/10"
+              >
                 <Mail className="size-4" />
                 Email
-              </ButtonLink>
+              </a>
             </div>
           </FadeIn>
 
           {/* Secondary social/profile links */}
           <FadeIn direction="up" delay={320} duration={550}>
             <div className="flex flex-wrap items-center gap-4 pt-1">
-              {siteConfig.youtubeUrl && (
-                <a
-                  href={siteConfig.youtubeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="YouTube channel"
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Youtube className="size-3.5" />
-                  YouTube
-                </a>
-              )}
-              {siteConfig.githubUrl && (
-                <a
-                  href={siteConfig.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub profile"
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <Github className="size-3.5" />
-                  GitHub
-                </a>
-              )}
               {siteConfig.linkedinUrl && (
                 <a
                   href={siteConfig.linkedinUrl}
@@ -131,18 +142,6 @@ export async function Hero() {
                 >
                   <ExternalLink className="size-3.5" />
                   LinkedIn
-                </a>
-              )}
-              {siteConfig.twitterUrl && (
-                <a
-                  href={siteConfig.twitterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter / X profile"
-                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  <XIcon className="size-3.5" />
-                  Twitter
                 </a>
               )}
               {siteConfig.orcidUrl && (
@@ -167,6 +166,42 @@ export async function Hero() {
                 >
                   <ExternalLink className="size-3.5" />
                   Scopus
+                </a>
+              )}
+              {siteConfig.youtubeUrl && (
+                <a
+                  href={siteConfig.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube channel"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <ExternalLink className="size-3.5" />
+                  YouTube
+                </a>
+              )}
+              {siteConfig.twitterUrl && (
+                <a
+                  href={siteConfig.twitterUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter / X profile"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <XIcon className="size-3.5" />
+                  Twitter
+                </a>
+              )}
+              {siteConfig.githubUrl && (
+                <a
+                  href={siteConfig.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <ExternalLink className="size-3.5" />
+                  GitHub
                 </a>
               )}
               {siteConfig.facultyPageUrl && (

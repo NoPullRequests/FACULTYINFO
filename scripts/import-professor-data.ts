@@ -54,10 +54,12 @@ In addition to his strong research profile, Dr. Dey brings exceptional skills in
           'Explainable AI'
         ],
         stats: {
-          publications: 35,
+          publications: 39,
           citations: 280,
           hIndex: 8,
-          students: 5,
+          scholarHIndex: 8,
+          students: 8,
+          doctoralStudents: 8,
           projects: 2
         },
         education: [
@@ -145,13 +147,15 @@ In addition to his strong research profile, Dr. Dey brings exceptional skills in
           'Explainable AI'
         ],
         stats: {
-          publications: 35,
+          publications: 39,
           citations: 280,
           hIndex: 8,
-          students: 5,
+          scholarHIndex: 8,
+          students: 8,
+          doctoralStudents: 8,
           projects: 2
         },
-        publicationTotalCount: 35,
+        publicationTotalCount: 39,
         citations: 280
       }
     });

@@ -89,10 +89,8 @@ export default async function HomePage() {
           />
         </FadeIn>
         <div className="mt-6 space-y-4">
-          {featured.map((pub, i) => (
-            <FadeIn key={pub.id} delay={i * 80} direction="up" threshold={0.05}>
-              <PublicationCard publication={pub} />
-            </FadeIn>
+          {featured.map((pub) => (
+            <PublicationCard key={pub.id} publication={pub} />
           ))}
         </div>
       </section>
