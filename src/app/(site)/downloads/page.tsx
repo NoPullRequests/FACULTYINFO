@@ -11,9 +11,9 @@ const downloads = [
     description: "Full academic CV with publications, projects, teaching, and awards",
     category: "Academic",
     fileType: "PDF",
-    size: "TBD",
-    href: "#",  // Update when CV file is ready
-    available: false,
+    size: "~2 MB",
+    href: "/cv/Prasenjit_Dey_CV.pdf",
+    available: true,
   },
   {
     id: "bio",

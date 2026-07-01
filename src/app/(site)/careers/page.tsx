@@ -1,7 +1,6 @@
 import { Briefcase, GraduationCap, Send, CheckCircle2 } from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
-import { ButtonLink } from "@/components/ui/button-link";
 import { siteConfig } from "@/config/site";
 
 export default function CareersPage() {
@@ -90,13 +89,19 @@ export default function CareersPage() {
             </div>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href={`mailto:${siteConfig.email}?subject=Ph.D. Application`}>
+              <a
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Ph.D. Application — Vision Intelligence Lab")}&body=${encodeURIComponent("Dear Dr. Dey,\n\nI am writing to apply for the Ph.D. position in Machine Learning at NIT Rourkela.\n\nName:\nQualification:\nGATE/NET Score:\nResearch Interests:\nBrief Statement:\n\nAttachments: CV, Transcripts, Research Statement\n\nThank you.")}`}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80"
+              >
                 <Send className="size-4" />
                 Apply Now
-              </ButtonLink>
-              <ButtonLink href="/research" variant="outline">
+              </a>
+              <a
+                href="/research"
+                className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-primary/40 hover:text-primary"
+              >
                 View Research Areas
-              </ButtonLink>
+              </a>
             </div>
           </div>
         </FadeIn>
@@ -130,10 +135,13 @@ export default function CareersPage() {
             </p>
 
             <div className="mt-6">
-              <ButtonLink href={`mailto:${siteConfig.email}?subject=Project Position Inquiry`} variant="outline">
+              <a
+                href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("Project Position Inquiry — Vision Intelligence Lab")}&body=${encodeURIComponent("Dear Dr. Dey,\n\nI am interested in a project/JRF position in your research group.\n\nName:\nQualification:\nArea of Interest:\nAvailability:\n\nThank you.")}`}
+                className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-primary/40 hover:text-primary"
+              >
                 <Send className="size-4" />
                 Express Interest
-              </ButtonLink>
+              </a>
             </div>
           </div>
         </FadeIn>

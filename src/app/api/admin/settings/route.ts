@@ -19,31 +19,22 @@ export async function PUT(request: Request) {
 
   const body = await request.json();
 
+  const payload = {
+    shortBio:             String(body.shortBio             ?? ""),
+    longBio:              String(body.longBio              ?? ""),
+    researchGroup:        String(body.researchGroup        ?? ""),
+    publicationTotalCount: Number(body.publicationTotalCount ?? 0),
+    researchInterests:    Array.isArray(body.researchInterests) ? body.researchInterests : [],
+    stats:                body.stats      ?? {},
+    education:            body.education  ?? [],
+    experience:           body.experience ?? [],
+    awards:               body.awards     ?? [],
+  };
+
   const updated = await auth.prisma.siteSettings.upsert({
-    where: { id: "default" },
-    create: {
-      id: "default",
-      shortBio: String(body.shortBio ?? ""),
-      longBio: String(body.longBio ?? ""),
-      researchGroup: String(body.researchGroup ?? ""),
-      researchInterests: body.researchInterests ?? [],
-      stats: body.stats ?? {},
-      education: body.education ?? [],
-      experience: body.experience ?? [],
-      awards: body.awards ?? [],
-      publicationTotalCount: Number(body.publicationTotalCount ?? 0),
-    },
-    update: {
-      shortBio: String(body.shortBio ?? ""),
-      longBio: String(body.longBio ?? ""),
-      researchGroup: String(body.researchGroup ?? ""),
-      researchInterests: body.researchInterests ?? undefined,
-      stats: body.stats ?? undefined,
-      publicationTotalCount:
-        body.publicationTotalCount !== undefined
-          ? Number(body.publicationTotalCount)
-          : undefined,
-    },
+    where:  { id: "default" },
+    create: { id: "default", citations: 0, ...payload },
+    update: payload,
   });
 
   return NextResponse.json({ data: updated });
