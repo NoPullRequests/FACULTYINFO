@@ -1,0 +1,76 @@
+{
+  "students": [
+    {
+      "id": "stu-1",
+      "name": "Rahul Mondal",
+      "topic": "On Generalization and Robustness of Neural Networks",
+      "level": "PHD",
+      "status": "Graduated",
+      "graduationYear": 2025,
+      "role": "Co-Supervisor"
+    },
+    {
+      "id": "stu-2",
+      "name": "Suvankar Chakraborty",
+      "topic": "IoT/ML applications in microgrid",
+      "level": "PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2025",
+      "role": "Co-Supervisor"
+    },
+    {
+      "id": "stu-3",
+      "name": "Kamalakanta Pradhan",
+      "topic": "Machine Learning, Deep Learning",
+      "level": "PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2025",
+      "role": "Supervisor"
+    },
+    {
+      "id": "stu-4",
+      "name": "Mousumi Behera",
+      "topic": "Machine Learning and Deep Learning",
+      "level": "PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2024",
+      "role": "Supervisor"
+    },
+    {
+      "id": "stu-5",
+      "name": "Shashwat Kumar Panigrahi",
+      "topic": "Machine Learning, Data Mining, Deep Learning",
+      "level": "PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2024",
+      "role": "Co-Supervisor"
+    },
+    {
+      "id": "stu-6",
+      "name": "Divya Kumari",
+      "topic": "Machine Learning and Quantum Computing",
+      "level": "EXECUTIVE_PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2025",
+      "role": "Co-Supervisor"
+    },
+    {
+      "id": "stu-7",
+      "name": "Satadal Chakraborty",
+      "topic": "Medical Image Processing",
+      "level": "EXECUTIVE_PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2025",
+      "role": "Supervisor"
+    },
+    {
+      "id": "stu-8",
+      "name": "Saswati Naskar",
+      "topic": "Intelligent Machine Learning Applications",
+      "level": "EXECUTIVE_PHD",
+      "status": "Continuing",
+      "enrolled": "Jul 2024",
+      "role": "Supervisor"
+    }
+  ]
+}

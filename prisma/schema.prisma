@@ -1,0 +1,184 @@
+// Prisma schema — Academic Portfolio OS
+// Mirrors src/content/*.json for seamless JSON → DB migration.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model SiteSettings {
+  id                    String @id @default("default")
+  shortBio              String @db.Text
+  longBio               String @db.Text
+  researchGroup         String
+  researchInterests     Json
+  stats                 Json
+  education             Json
+  experience            Json
+  awards                Json
+  publicationTotalCount Int    @default(0)
+  citations             Int    @default(0)
+  updatedAt             DateTime @updatedAt
+}
+
+model Publication {
+  id        String   @id
+  title     String
+  authors   String   @db.Text
+  venue     String
+  year      Int
+  type      String
+  doi       String?
+  pdfUrl    String?
+  bibtex    String?  @db.Text
+  abstract  String?  @db.Text
+  citations Int?
+  tags      Json     @default("[]")
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([year])
+  @@index([type])
+  @@index([featured])
+}
+
+model Student {
+  id              String  @id
+  name            String
+  topic           String  @db.Text
+  level           String
+  status          String
+  enrolled        String?
+  graduationYear  Int?
+  role            String
+  sortOrder       Int     @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+}
+
+model Project {
+  id              String @id
+  title           String @db.Text
+  agency          String
+  role            String
+  durationMonths  Int
+  status          String
+  type            String
+  description     String? @db.Text
+  sortOrder       Int     @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Course {
+  id        String  @id @default(cuid())
+  name      String
+  type      String
+  isActive  Boolean @default(true)
+  sortOrder Int     @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  excerpt     String   @db.Text
+  content     String?  @db.Text
+  date        DateTime @default(now())
+  category    String   @default("General")
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date(sort: Desc)])
+  @@index([featured])
+}
+
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  coverImage  String?
+  category    String   @default("Research")
+  tags        Json     @default("[]")
+  published   Boolean  @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([publishedAt(sort: Desc)])
+}
+
+model GalleryImage {
+  id          String   @id @default(cuid())
+  title       String
+  description String?  @db.Text
+  imageUrl    String
+  category    String
+  album       String?
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([album])
+}
+
+model Position {
+  id           String   @id @default(cuid())
+  title        String
+  type         String   // "PHD" | "JRF" | "MTECH" | "INTERNSHIP"
+  status       String   @default("open") // "open" | "closed"
+  description  String   @db.Text
+  requirements String   @db.Text
+  funding      String?
+  deadline     String?
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([status])
+}
+
+model Download {
+  id          String   @id @default(cuid())
+  title       String
+  description String?  @db.Text
+  fileUrl     String
+  fileType    String   @default("PDF")
+  fileSize    String?
+  category    String   @default("General") // "Lecture Notes" | "Slides" | "Dataset" | "Code" | "Academic"
+  course      String?
+  published   Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([published])
+}
+
+// Admin user - single professor account
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String
+  password  String   // Hashed password with bcrypt
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+}

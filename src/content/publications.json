@@ -1,0 +1,385 @@
+{
+  "publications": [
+    {
+      "id": "pub-iot-2023",
+      "title": "Fortified-Chain 2.0: Intelligent Blockchain for Decentralized Smart Healthcare System",
+      "authors": "B. S. Egala, A. K. Pradhan, P. Dey, V. Badarla, and S. P. Mohanty",
+      "venue": "IEEE Internet of Things Journal",
+      "year": 2023,
+      "type": "JOURNAL",
+      "doi": "10.1109/JIOT.2023.3247452",
+      "citations": 83,
+      "featured": true
+    },
+    {
+      "id": "pub-fnirs-2023",
+      "title": "Real Time Detection of Cognitive Load using fNIRS: A Deep Learning Approach",
+      "authors": "S. Karmakar, S. Kamilya, P. Dey, P. K. Guhathakurta, M. Dalui, T. K. Bera, S. Halder, C. Koley, T. Pal, and A. Basu",
+      "venue": "Biomedical Signal Processing and Control",
+      "year": 2023,
+      "type": "JOURNAL",
+      "doi": "10.1016/j.bspc.2022.104227",
+      "citations": 67,
+      "featured": true
+    },
+    {
+      "id": "pub-tsmc-2017",
+      "title": "Regularizing Multilayer Perceptron for Robustness",
+      "authors": "P. Dey, K. Nag, T. Pal, and N. R. Pal",
+      "venue": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+      "year": 2017,
+      "type": "JOURNAL",
+      "doi": "10.1109/TSMC.2017.2664143",
+      "citations": 53,
+      "featured": true
+    },
+    {
+      "id": "pub-uice-2024",
+      "title": "UICE-MIRNet Guided Image Enhancement for Underwater Object Detection",
+      "authors": "P. Sarkar, S. De, S. Gurung, and P. Dey",
+      "venue": "Scientific Reports",
+      "year": 2024,
+      "type": "JOURNAL",
+      "doi": "10.1038/s41598-024-73384-3",
+      "citations": 28,
+      "featured": true
+    },
+    {
+      "id": "pub-ids-2023",
+      "title": "A New Random Forest and Support Vector Machine-Based Intrusion Detection Model in Networks",
+      "authors": "P. Dey and D. Bhakta",
+      "venue": "National Academy Science Letters",
+      "year": 2023,
+      "type": "JOURNAL",
+      "doi": "10.1007/s40009-023-01223-0",
+      "citations": 25,
+      "featured": false
+    },
+    {
+      "id": "pub-rbf-2019",
+      "title": "On Robustness of Radial Basis Function Network with Input Perturbation",
+      "authors": "P. Dey, M. Gopal, P. Pradhan, and T. Pal",
+      "venue": "Neural Computing and Applications",
+      "year": 2019,
+      "type": "JOURNAL",
+      "doi": "10.1007/s00521-017-3086-5",
+      "citations": 21,
+      "featured": true
+    },
+    {
+      "id": "pub-iot-agri-2024",
+      "title": "Future Prospects of Agriculture using IoT and Machine Learning",
+      "authors": "S. Hazra, A. Mondal, P. Dey, S. Prabhakar, A. K. Jha, and N. Rakshit",
+      "venue": "2024 IEEE International Conference on Smart Power Control and Renewable Energy",
+      "year": 2024,
+      "type": "CONFERENCE",
+      "citations": 16,
+      "featured": false
+    },
+    {
+      "id": "pub-rainfall-2023",
+      "title": "Forecasting of Rainfall in Subdivisions of India using Machine Learning",
+      "authors": "S. Hazra, S. Ghosal, A. Mondal, and P. Dey",
+      "venue": "Doctoral Symposium on Intelligence Enabled Research",
+      "year": 2023,
+      "type": "CONFERENCE",
+      "citations": 16,
+      "featured": false
+    },
+    {
+      "id": "pub-iot-health-2024",
+      "title": "Applications of Internet of Things and Machine Learning Technologies in Healthcare",
+      "authors": "P. Dey, S. K. Adhikari, S. De, and R. Banerjee",
+      "venue": "Internet of Things-Based Machine Learning in Healthcare",
+      "year": 2024,
+      "type": "CHAPTER",
+      "citations": 11,
+      "featured": false
+    },
+    {
+      "id": "pub-tai-2023",
+      "title": "A Hybrid Regularized Multilayer Perceptron for Input Noise Immunity",
+      "authors": "R. Mondal, T. Pal, and P. Dey",
+      "venue": "IEEE Transactions on Artificial Intelligence",
+      "year": 2023,
+      "type": "JOURNAL",
+      "doi": "10.1109/TAI.2022.3225124",
+      "citations": 11,
+      "featured": true
+    },
+    {
+      "id": "pub-pr-2024",
+      "title": "Discriminative Regularized Input Manifold for Multilayer Perceptron",
+      "authors": "R. Mondal, T. Pal, and P. Dey",
+      "venue": "Pattern Recognition",
+      "year": 2024,
+      "type": "JOURNAL",
+      "doi": "10.1016/j.patcog.2024.110421",
+      "citations": 10,
+      "abstract": "Proposes a discriminative regularization technique that constrains the input manifold of multilayer perceptrons to improve classification accuracy and generalization. The method leverages manifold geometry to shape decision boundaries, achieving robust performance on benchmark datasets.",
+      "featured": false
+    },
+    {
+      "id": "pub-ga-cluster-2020",
+      "title": "Adaptive Position-Based Crossover in the Genetic Algorithm for Data Clustering",
+      "authors": "A. Gain and P. Dey",
+      "venue": "Recent Advances in Hybrid Metaheuristics for Data Clustering",
+      "year": 2020,
+      "type": "CHAPTER",
+      "doi": "10.1002/9781119551621.ch3",
+      "citations": 9,
+      "featured": false
+    },
+    {
+      "id": "pub-surveillance-2020",
+      "title": "Analytical Modelling of Video Surveillance System along Forest Railway Tracks",
+      "authors": "A. Acharyya, P. Dey, A. Datta, and S. Bose",
+      "venue": "IETE Journal of Education",
+      "year": 2020,
+      "type": "JOURNAL",
+      "citations": 5,
+      "featured": false
+    },
+    {
+      "id": "pub-yolo-2025",
+      "title": "Advanced YOLOv4 for Real-Time Underwater Object Detection: An Application-Oriented Approach",
+      "authors": "P. Sarkar, S. De, P. Dey, and S. Gurung",
+      "venue": "Applied Soft Computing",
+      "year": 2025,
+      "type": "JOURNAL",
+      "doi": "10.1016/j.asoc.2025.113837",
+      "citations": 4,
+      "featured": false
+    },
+    {
+      "id": "pub-swarm-2024",
+      "title": "Medical Image Analysis using Swarm Intelligence: A Survey",
+      "authors": "S. K. Adhikari, P. Dey, S. De, and S. Paul",
+      "venue": "Recent Trends in Swarm Intelligence Enabled Research for Engineering",
+      "year": 2024,
+      "type": "CHAPTER",
+      "citations": 4,
+      "featured": false
+    },
+    {
+      "id": "pub-kl-2020",
+      "title": "Regularizing Multilayer Perceptron for Generalization Using KL-Divergence",
+      "authors": "R. Mondal, P. Dey, G. Sharma, and T. Pal",
+      "venue": "2020 International Conference on Computer Science, Engineering and Applications (ICCSEA)",
+      "year": 2020,
+      "type": "CONFERENCE",
+      "doi": "10.1109/ICCSEA49143.2020.9132891",
+      "citations": 4,
+      "featured": false
+    },
+    {
+      "id": "pub-gfrp-2017",
+      "title": "GFRP Cutting Parameters Optimization using Different MOEAs",
+      "authors": "S. Mukherjee, P. Dey, and T. Pal",
+      "venue": "2017 International Conference on Intelligent Computing, Instrumentation and Control Technologies (ICICICT)",
+      "year": 2017,
+      "type": "CONFERENCE",
+      "doi": "10.1109/ICICICT1.2017.8342640",
+      "citations": 3,
+      "featured": false
+    },
+    {
+      "id": "pub-generalization-2017",
+      "title": "On Improving Generalization of Classifiers using Feature Extraction",
+      "authors": "P. Dey and T. Pal",
+      "venue": "International Journal of Control Theory and Applications",
+      "year": 2017,
+      "type": "JOURNAL",
+      "citations": 3,
+      "featured": false
+    },
+    {
+      "id": "pub-opto-2026",
+      "title": "Ultra-Wide Range Programmable Optically Variable Resistors: Wide-Spectrum Source Control",
+      "authors": "S. Ray, T. Saha, K. Bhattacheryya, P. Das, P. Dey, and A. Acharyya",
+      "venue": "Journal of Electronic Materials",
+      "year": 2026,
+      "type": "JOURNAL",
+      "citations": 2,
+      "featured": false
+    },
+    {
+      "id": "pub-ivf-2022",
+      "title": "Design and Realization of an IoT-Based System for Real-Time Monitoring of Embryo Culture Conditions in IVF CO2 Incubators",
+      "authors": "S. Bose, S. Ghosh, S. Dhang, P. Dey, and A. Acharyya",
+      "venue": "Doctoral Symposium on Intelligence Enabled Research",
+      "year": 2022,
+      "type": "CONFERENCE",
+      "citations": 2,
+      "featured": false
+    },
+    {
+      "id": "pub-ins-2026",
+      "title": "Symmetric Kullback-Leibler Divergence to Regularize Denoising Auto Encoder for Classification",
+      "authors": "R. Mondal, P. Dey, and T. Pal",
+      "venue": "Information Sciences",
+      "year": 2026,
+      "type": "JOURNAL",
+      "doi": "10.1016/j.ins.2026.123321",
+      "abstract": "Introduces a symmetric Kullback-Leibler divergence-based regularization strategy for denoising autoencoders to improve classification performance. The approach enforces consistency between the encoder's latent distribution and a target distribution, reducing overfitting and enhancing feature quality.",
+      "featured": false
+    },
+    {
+      "id": "pub-graph-2026",
+      "title": "Graph Clustering via Similarity Aware Embeddings with an MLP-based Learning Strategy",
+      "authors": "S. K. Panigrahi, D. Maru, S. Gaurav, P. Dey, and P. Bhattacharjee",
+      "venue": "Proceedings of the 41st ACM/SIGAPP Symposium on Applied Computing",
+      "year": 2026,
+      "type": "CONFERENCE",
+      "doi": "10.1145/3748522.3779841",
+      "abstract": "Proposes a graph clustering approach that learns similarity-aware node embeddings using an MLP-based strategy. By incorporating structural similarity directly into the embedding process, the method achieves improved cluster cohesion and separation compared to conventional graph clustering techniques.",
+      "featured": false
+    },
+    {
+      "id": "pub-micro-2025a",
+      "title": "AuLiTENet: A New Lightweight and Time-Efficient CNN Architecture for Micro-Expression Classification Leveraging Data Augmentation",
+      "authors": "A. Jain, D. Bhakta, and P. Dey",
+      "venue": "Sādhanā",
+      "year": 2025,
+      "type": "JOURNAL",
+      "doi": "10.1007/s12046-025-02781-3",
+      "abstract": "Presents AuLiTENet, a novel lightweight and time-efficient CNN architecture for micro-expression recognition. Combined with data augmentation strategies, the model achieves competitive accuracy with significantly reduced computational cost, making it suitable for real-time deployment.",
+      "featured": false
+    },
+    {
+      "id": "pub-micro-2025b",
+      "title": "Two-Tiered Spatio-Temporal Feature Extraction for Micro-Expression Classification",
+      "authors": "A. Jain, D. Bhakta, and P. Dey",
+      "venue": "Journal of Visual Communication and Image Representation",
+      "year": 2025,
+      "type": "JOURNAL",
+      "doi": "10.1016/j.jvcir.2025.104436",
+      "abstract": "Proposes a two-tiered framework that extracts spatio-temporal features at multiple granularities for micro-expression classification. The hierarchical approach captures both fine-grained local motion patterns and global temporal dynamics, outperforming single-scale methods on standard benchmarks.",
+      "featured": false
+    },
+    {
+      "id": "pub-wt-init-2023",
+      "title": "Deep Learning-Based Weight Initialization on Multi-Layer Perceptron for Image Recognition",
+      "authors": "S. Mukherjee and P. Dey",
+      "venue": "Doctoral Symposium on Intelligence Enabled Research",
+      "year": 2022,
+      "type": "CHAPTER",
+      "doi": "10.1007/978-981-99-1472-2_17",
+      "featured": false
+    },
+    {
+      "id": "pub-wsn-2023",
+      "title": "A Survey on Energy-Efficient Routing in Wireless Sensor Networks using Machine Learning Algorithms",
+      "authors": "P. Dey and A. Gain",
+      "venue": "Novel Research and Development Approaches in Heterogeneous Systems and Algorithms",
+      "year": 2023,
+      "type": "CHAPTER",
+      "doi": "10.4018/978-1-6684-7524-9.ch015",
+      "featured": false
+    },
+    {
+      "id": "pub-ganges-2023",
+      "title": "Quality Analysis of the Ganges River Water Utilizing Machine Learning Technologies",
+      "authors": "P. Dey, S. K. Adhikari, A. Gain, and S. Koner",
+      "venue": "Doctoral Symposium on Intelligence Enabled Research",
+      "year": 2022,
+      "type": "CHAPTER",
+      "doi": "10.1007/978-981-99-1472-2_2",
+      "featured": false
+    },
+    {
+      "id": "pub-imoga-2017",
+      "title": "IMOGA/SOM: An Intelligent Multi-Objective Genetic Algorithm using Self Organizing Map",
+      "authors": "S. Aon, A. Sau, P. Dey, and T. Pal",
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2017,
+      "type": "CONFERENCE",
+      "doi": "10.1007/978-3-319-59153-7_4",
+      "featured": false
+    },
+    {
+      "id": "pub-stacked-ae-2017",
+      "title": "Regularized Stacked Auto-Encoder Based Pre-Training for Generalization of Multi-Layer Perceptron",
+      "authors": "P. Dey, A. Ghosh, and T. Pal",
+      "venue": "Lecture Notes in Computer Science",
+      "year": 2017,
+      "type": "CONFERENCE",
+      "doi": "10.1007/978-3-319-71069-3_18",
+      "featured": false
+    },
+    {
+      "id": "pub-esom-2014",
+      "title": "Extended Self Organizing Map with Probabilistic Neural Network for Pattern Classification Problems",
+      "authors": "P. Dey and T. Pal",
+      "venue": "Proceedings of the 3rd International Conference on Frontiers of Intelligent Computing",
+      "year": 2015,
+      "type": "CONFERENCE",
+      "doi": "10.1007/978-3-319-11933-5_19",
+      "featured": false
+    },
+    {
+      "id": "pub-iot-intro-2025",
+      "title": "Introduction to Real-World Applications and Implementations of IoT",
+      "authors": "A. Acharyya, P. Dey, and S. Biswas",
+      "venue": "Real-World Applications and Implementations of IoT",
+      "year": 2025,
+      "type": "CHAPTER",
+      "featured": false
+    },
+    {
+      "id": "pub-iot-book-2024",
+      "title": "Internet of Things-Based Machine Learning in Healthcare: Technology and Applications",
+      "authors": "P. Dey, S. K. Adhikari, S. De, and I. Kar",
+      "venue": "CRC Press",
+      "year": 2024,
+      "type": "BOOK",
+      "featured": false
+    },
+    {
+      "id": "pub-algae-2024",
+      "title": "Microarray-Based Gene Expression Analysis of Marine Algae to Identifying Novel Metabolites for Cosmetic and Pharmaceutical Industries",
+      "authors": "Y. Verma, B. P. Etemi, P. Dey, and D. Samanta",
+      "venue": "International Conference on Innovations in Data Analytics",
+      "year": 2024,
+      "type": "CONFERENCE",
+      "featured": false
+    },
+    {
+      "id": "pub-ipcam-2022",
+      "title": "IoT-Based Smart Internet Protocol Camera for Examination Monitoring",
+      "authors": "S. Bose, S. Ghosh, S. Dhang, R. Karmakar, P. Dey, and A. Acharyya",
+      "venue": "Doctoral Symposium on Intelligence Enabled Research",
+      "year": 2022,
+      "type": "CONFERENCE",
+      "featured": false
+    },
+    {
+      "id": "pub-stock-2020",
+      "title": "Identification of Volatile Periods, Detection of Reliable Stocks and Estimation of Stock Prices for the Stocks in Non-Volatile Periods using ARIMA, SVD for BSE",
+      "authors": "P. Dey and J. Biswas",
+      "venue": "International Journal",
+      "year": 2020,
+      "type": "JOURNAL",
+      "featured": false
+    },
+    {
+      "id": "pub-som-feature-2016",
+      "title": "A New Feature Extraction Technique for Classifiers using Self-Organising Map",
+      "authors": "P. Dey and T. Pal",
+      "venue": "International Journal of Convergence Computing",
+      "year": 2016,
+      "type": "JOURNAL",
+      "featured": false
+    },
+    {
+      "id": "pub-ca-leader-2012",
+      "title": "An Efficient Cellular Automata Based Leader Election Scheme",
+      "authors": "M. Dey and P. Dey",
+      "venue": "International Journal of Computer Applications",
+      "year": 2012,
+      "type": "JOURNAL",
+      "featured": false
+    }
+  ],
+  "totalCount": 37
+}

@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Consortium of Technologies for Sustainable Agriculture, Health, Energy and Environment",
+      "agency": "ANRF / SERB",
+      "role": "Co-Investigator",
+      "durationMonths": 60,
+      "status": "ongoing",
+      "type": "Sponsored"
+    },
+    {
+      "id": "proj-2",
+      "title": "Prototyping of ML based Solar & Wind Forecasting Approach and Intelligent Power Management Scheme for Hybrid Storages in On-board Naval Microgrid",
+      "agency": "DRDO",
+      "role": "Co-Investigator",
+      "durationMonths": 36,
+      "status": "ongoing",
+      "type": "Sponsored"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "shortBio": "Assistant Professor in Computer Science & Engineering at NIT Rourkela. Research spans machine learning, deep learning, pattern recognition, and intelligent computing with applications in IoT, healthcare, and edge systems.",
+  "longBio": "Dr. Prasenjit Dey received the B.Tech. degree in computer science and engineering from the West Bengal University of Technology, Kolkata, India, in 2010, and the M.Tech. degree in computer science and engineering from the National Institute of Technology Durgapur, Durgapur, India, in 2012. He was an Associate Innovator with Nivio Technologies, Gurgaon, India, in 2012. He was a hardware graphics designer at Intel from 2017 to 2018. He received his Ph.D. degree in computer science and engineering from the National Institute of Technology Durgapur, Durgapur, India, in 2018. He was an Assistant Professor in the computer science and engineering at Cooch Behar Government Engineering College, Cooch Behar, India. He joined the National Institute of Technology Rourkela, Odisha, India, as an Assistant Professor in the Department of Computer Science in 2023 and is currently working. He has successfully completed one government project and is currently involved in few others. His current research interests include artificial neural networks, pattern recognition, machine learning, deep learning, IoT design, etc. He has many research publications in internationally reputed journals like IEEE Transactions on Systems, Man, and Cybernetics, IEEE Transactions on Artificial Intelligence, IEEE Internet of Things Journal, Biomedical Signal Processing and Control, Pattern Recognition, etc.",
+  "researchGroup": "Intelligent Computing and Computer Vision",
+  "researchInterests": [
+    "Machine Learning",
+    "Soft Computing",
+    "Pattern Recognition",
+    "Artificial Neural Networks",
+    "Deep Learning",
+    "Data Science"
+  ],
+  "stats": {
+    "publications": 37,
+    "citations": 386,
+    "sponsoredProjects": 2,
+    "doctoralStudents": 8,
+    "continuingEducation": 7,
+    "scholarHIndex": 10,
+    "scholarI10Index": 11,
+    "scopusHIndex": 10
+  },
+  "education": [
+    {
+      "degree": "Ph.D.",
+      "field": "Computer Science and Engineering",
+      "institution": "National Institute of Technology Durgapur",
+      "year": 2018
+    },
+    {
+      "degree": "M.Tech",
+      "field": "Computer Science and Engineering",
+      "institution": "National Institute of Technology Durgapur",
+      "year": 2012
+    },
+    {
+      "degree": "B.Tech",
+      "field": "Computer Science and Engineering",
+      "institution": "College of Engineering and Management, Kolaghat",
+      "year": 2010
+    }
+  ],
+  "experience": [
+    {
+      "title": "Assistant Professor",
+      "organization": "National Institute of Technology Rourkela",
+      "department": "Computer Science and Engineering",
+      "start": "2023",
+      "end": null
+    },
+    {
+      "title": "Assistant Professor",
+      "organization": "Cooch Behar Government Engineering College",
+      "department": "Computer Science and Engineering",
+      "start": "2018-06",
+      "end": "2023-07"
+    },
+    {
+      "title": "Hardware Graphics Engineer",
+      "organization": "Intel",
+      "start": "2017-02",
+      "end": "2018-06"
+    },
+    {
+      "title": "Associate Innovator",
+      "organization": "Nivio Technologies",
+      "start": "2012-07",
+      "end": "2012-11"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Certificate of Achievement — CMPDI Hackathon on R&D (2nd Runner-Up)",
+      "year": 2025,
+      "organization": "Central Mine Planning and Design Institute (CMPDI), Ministry of Coal, Government of India",
+      "description": "Awarded by Union Minister of Coal and Mines Shri G. Kishan Reddy at the Star Rating Awards Ceremony for Coal & Lignite Mines, Mumbai, 4 September 2025. Recognition for conceptual solution on PS-2, celebrating excellence in safety and environmental sustainability."
+    }
+  ]
+}

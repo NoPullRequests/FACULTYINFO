@@ -1,0 +1,20 @@
+{
+  "courses": [
+    { "name": "Data Science", "type": "Theory" },
+    { "name": "Database Management Systems", "type": "Theory" },
+    { "name": "Deep Learning", "type": "Theory" },
+    { "name": "Discrete Structures", "type": "Theory" },
+    { "name": "Introduction to AI and ML", "type": "Theory" },
+    { "name": "Machine Learning", "type": "Theory" },
+    { "name": "Software Engineering", "type": "Theory" },
+    { "name": "AI and ML Laboratory", "type": "Lab" },
+    { "name": "Data Science Laboratory", "type": "Lab" },
+    { "name": "Database Engineering Laboratory", "type": "Lab" },
+    { "name": "Deep Learning Laboratory", "type": "Lab" },
+    { "name": "Machine Learning Laboratory", "type": "Lab" },
+    { "name": "Operating Systems Laboratory", "type": "Lab" },
+    { "name": "Product Development Laboratory", "type": "Lab" },
+    { "name": "Programming for Problem Solving", "type": "Lab" },
+    { "name": "Software Engineering Laboratory", "type": "Lab" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "news": [
+    {
+      "id": "news-1",
+      "title": "Paper Accepted at Pattern Recognition 2024",
+      "excerpt": "Our work on 'Discriminative Regularized Input Manifold for Multilayer Perceptron' has been accepted for publication in Pattern Recognition journal.",
+      "date": "2024-03-15",
+      "category": "Publication",
+      "featured": true
+    },
+    {
+      "id": "news-2",
+      "title": "New DRDO Project Funded",
+      "excerpt": "Awarded a 36-month research project on ML-based Solar & Wind Forecasting for Naval Microgrid applications.",
+      "date": "2024-02-10",
+      "category": "Grant",
+      "featured": true
+    },
+    {
+      "id": "news-3",
+      "title": "PhD Position Available",
+      "excerpt": "Seeking motivated candidates for Ph.D. research in Machine Learning and Neural Network Robustness. Apply now!",
+      "date": "2024-01-20",
+      "category": "Opportunity",
+      "featured": false
+    }
+  ]
+}
