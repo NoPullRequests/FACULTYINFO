@@ -2,8 +2,6 @@ import {
   BookOpen,
   ExternalLink,
   Mail,
-  X as XIcon,
-  Download,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -87,8 +85,7 @@ export async function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border-2 border-red-600 px-4 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-600/10"
               >
-                <Download className="size-4" />
-                Download CV
+                CV
               </a>
               
               {/* Google Scholar - Google Blue */}
@@ -188,7 +185,7 @@ export async function Hero() {
                   aria-label="Twitter / X profile"
                   className="flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <XIcon className="size-3.5" />
+                  <ExternalLink className="size-3.5" />
                   Twitter
                 </a>
               )}
