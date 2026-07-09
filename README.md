@@ -184,6 +184,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+**Admin panel:** Go to [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+- Email: `deyp@nitrkl.ac.in`
+- Password: `admin123`
+
 ---
 
 ## Deployment (Vercel)
